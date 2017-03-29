@@ -18,6 +18,7 @@ import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.bind.support.SessionStatus;
 
 import ua.com.myshop.entity.User;
+import ua.com.myshop.service.MailSendingService;
 import ua.com.myshop.service.UserService;
 import ua.com.myshop.validator.UserValidator;
 
@@ -27,6 +28,9 @@ public class IndexController {
 
 	@Autowired
 	private UserService userService;
+	
+//	@Autowired
+//	private MailSendingService mailSendingService;
 	
 	@InitBinder("user")
 	protected void bind(WebDataBinder binder){
@@ -56,6 +60,7 @@ public class IndexController {
 	public String save(@ModelAttribute("user") @Valid User user, BindingResult br, SessionStatus status) {
 		if(br.hasErrors()) return "user-registration";
 		userService.save(user);
+//		mailSendingService.sendMail("Hello"+user.getName(), user.getEmail(), "Реєстрація на сайті Shoe Store пройшла успішно!");
 		status.setComplete();
 		return "redirect:/login";
 	}
