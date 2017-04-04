@@ -3,6 +3,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <%@ taglib uri="/WEB-INF/custom.tld" prefix="custom"%>
+<%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
 <style>
 	.filter .control-label{
 		text-align: left;
@@ -60,7 +61,9 @@
 							<div>${commodity.season.season}</div>
 							<div>${commodity.typeOfShoes.typeOfShoes}</div>
 							<div>Ціна: ${commodity.price}</div>
-							<div><a class="btn btn-info" href="">В корзину</a></div>
+							<sec:authorize access="isAuthenticated()">
+								<div><a class="btn btn-info" href="">В корзину</a></div>
+							</sec:authorize>
 				      	</div>
 				    </div>
 				 </div>
