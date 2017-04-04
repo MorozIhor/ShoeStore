@@ -23,6 +23,9 @@
 					<form:form action="/logout" method="POST" class="navbar-form navbar-left">
 						<button type="submit" class="btn btn-danger">Вийти</button>
 					</form:form>
+					<li><a href=""><span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span>
+						<span>Корзина</span>
+				</a></li>
 				</sec:authorize>
 				<sec:authorize access="!isAuthenticated()">
 					<li><a href="/login"><span class="glyphicon glyphicon-user"
@@ -32,9 +35,6 @@
 							aria-hidden="true"></span> <span>Реєстрація</span>
 					</a></li>
 				</sec:authorize>
-				<li><a href=""><span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span>
-						<span>Корзина</span>
-				</a></li>
 			</ul>
 		</div>
 	</div>
