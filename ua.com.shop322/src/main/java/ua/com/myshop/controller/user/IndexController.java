@@ -60,7 +60,7 @@ public class IndexController {
 	public String save(@ModelAttribute("user") @Valid User user, BindingResult br, SessionStatus status) {
 		if(br.hasErrors()) return "user-registration";
 		userService.save(user);
-//		mailSendingService.sendMail("Hello"+user.getName(), user.getEmail(), "Реєстрація на сайті Shoe Store пройшла успішно!");
+//		mailSendingService.sendMail("Hello "+user.getName(), user.getEmail(), "Реєстрація на сайті Shoe Store пройшла успішно!");
 		status.setComplete();
 		return "redirect:/login";
 	}
