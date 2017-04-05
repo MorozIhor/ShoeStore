@@ -62,7 +62,7 @@
 							<div>${commodity.typeOfShoes.typeOfShoes}</div>
 							<div>Ціна: ${commodity.price}</div>
 							<sec:authorize access="isAuthenticated()">
-								<div><a class="btn btn-info" href="">В корзину</a></div>
+								<div><a class="btn btn-info" href="/male/addtocart/${commodity.id}">В корзину</a></div>
 							</sec:authorize>
 				      	</div>
 				    </div>

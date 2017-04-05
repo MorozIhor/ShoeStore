@@ -44,4 +44,6 @@ public class MaleController {
 		model.addAttribute("typesOfShoes", typeOfShoesService.findAll());
 		return "user-male";
 	}
+	
+	
 }

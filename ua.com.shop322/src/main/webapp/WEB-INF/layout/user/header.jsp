@@ -23,7 +23,7 @@
 					<form:form action="/logout" method="POST" class="navbar-form navbar-left">
 						<button type="submit" class="btn btn-danger">Вийти</button>
 					</form:form>
-					<li><a href=""><span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span>
+					<li><a href="/cart"><span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span>
 						<span>Корзина</span>
 				</a></li>
 				</sec:authorize>
