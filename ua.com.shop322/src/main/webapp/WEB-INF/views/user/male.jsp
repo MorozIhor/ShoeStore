@@ -62,7 +62,11 @@
 							<div>${commodity.typeOfShoes.typeOfShoes}</div>
 							<div>Ціна: ${commodity.price}</div>
 							<sec:authorize access="isAuthenticated()">
-								<div><a class="btn btn-info" href="/male/addtocart/${commodity.id}">В корзину</a></div>
+					 		<div><form:form style="display:inline-block;margin-top:8px;"
+								action="/male/addtocart/${commodity.id}" method="POST">
+								<custom:hiddenInputs excludeParams=""/>
+								<button type="submit" class="btn btn-success">В корзину</button>
+							</form:form></div>
 							</sec:authorize>
 				      	</div>
 				    </div>

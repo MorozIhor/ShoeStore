@@ -77,16 +77,5 @@ public class CommodityServiceImpl implements CommodityService{
 	public Page<Commodity> findAll(Pageable pageable, CommodityFilter filter) {
 		return commodityDao.findAll(new CommoditySpecification(filter), pageable) ;
 	}
-
-	@Override
-	public Page<Commodity> findAllMale(Pageable pageable) {
-		return commodityDao.findAllMale(pageable);
-	}
-
-	@Override
-	public Page<Commodity> findAllMale(Pageable pageable, CommodityFilter filter) {
-		return commodityDao.findAll(new CommoditySpecification(filter), pageable) ;
-	}
-
 	
 }

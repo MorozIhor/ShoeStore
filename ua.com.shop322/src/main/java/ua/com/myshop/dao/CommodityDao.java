@@ -33,9 +33,5 @@ public interface CommodityDao extends JpaRepository <Commodity, Integer>, JpaSpe
 			countQuery="SELECT count(c.id) FROM Commodity c")
 	Page<Commodity> findAll(Pageable pageable);
 	
-	@Query(value="SELECT c FROM Commodity c LEFT JOIN FETCH c.brand LEFT JOIN FETCH c.gender "
-			+ "LEFT JOIN FETCH c.season LEFT JOIN FETCH c.typeOfShoes WHERE c.gender.id=1",
-			countQuery="SELECT count(c.id) FROM Commodity c")
-	Page<Commodity> findAllMale(Pageable pageable);
 
 }

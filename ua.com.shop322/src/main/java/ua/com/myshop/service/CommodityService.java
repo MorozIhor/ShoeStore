@@ -30,7 +30,4 @@ public interface CommodityService {
 	
 	Page<Commodity> findAll(Pageable pageable, CommodityFilter filter);
 
-	Page<Commodity> findAllMale(Pageable pageable);
-
-	Page<Commodity> findAllMale(Pageable pageable, CommodityFilter filter);
 }

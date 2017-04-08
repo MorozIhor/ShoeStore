@@ -7,6 +7,9 @@ import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 
 @Entity
@@ -28,6 +31,10 @@ public class Commodity {
 	
 	@ManyToOne(fetch=FetchType.LAZY)
 	private Brand brand;
+	
+	@ManyToMany
+	@JoinTable(name="cart_commodity", joinColumns=@JoinColumn(name="id_commodity"), inverseJoinColumns=@JoinColumn(name="id_cart"))
+	private List<Cart> carts;
 	
 	private int version;
 	
@@ -104,6 +111,41 @@ public class Commodity {
 	public void setBrand(Brand brand) {
 		this.brand = brand;
 	}
+
+
+	public List<Cart> getCarts() {
+		return carts;
+	}
+
+
+	public void setCarts(List<Cart> carts) {
+		this.carts = carts;
+	}
+
+
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + id;
+		return result;
+	}
+
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Commodity other = (Commodity) obj;
+		if (id != other.id)
+			return false;
+		return true;
+	}
+	
 	
 	
 }
